@@ -5,7 +5,7 @@ WITH forecast_hour_raw AS (
             ,(extracted_data -> 'location' ->> 'region')::VARCHAR(255) AS region
             ,(extracted_data -> 'location' ->> 'country')::VARCHAR(255) AS country
             ,JSON_ARRAY_ELEMENTS(extracted_data -> 'forecast' -> 'forecastday' -> 0 -> 'hour') AS hour_data
-    FROM {{source("staging", "weather_raw")}}
+    FROM {{source("staging", "weather_raw_year")}}
 ),
 forecast_hour_data AS (
     SELECT 

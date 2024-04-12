@@ -6,6 +6,6 @@ WITH locations_data AS (
         ,(extracted_data -> 'location' ->> 'lat')::NUMERIC AS lat 
         ,(extracted_data -> 'location' ->> 'lon')::NUMERIC AS lon
         ,(extracted_data -> 'location' ->> 'tz_id') AS timezone_id
-    FROM {{source("staging", "weather_raw")}})
+    FROM {{source("staging", "weather_raw_year")}})
 SELECT * 
 FROM locations_data
