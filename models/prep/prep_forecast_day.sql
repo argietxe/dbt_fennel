@@ -1,15 +1,15 @@
 WITH forecast_day_data AS (
-    SELECT * 
+    SELECT *
     FROM {{ref('staging_forecast_day')}}
 ),
 add_features AS (
-    SELECT *
-        ,date_part('day', date) AS day_of_month           -- day of month as a number
-        ,to_char(date, "MON") AS month_of_year          -- month name as a text
-        ,date_part('year', date) AS year                   -- year as a number
-        ,to_char(date, "DAY") AS day_of_week            -- weekday name as text
-        ,date_part('week', date) AS week_of_year           -- calender week number as number
-          -- year-calenderweek as text like '2024-43'
+    SELECT *,
+        DATE_PART('day', date) AS day_of_month, -- Extract the day of the month from the date
+        TO_CHAR(date, 'Month') AS month_of_year, -- Extract the month name from the date
+        DATE_PART('year', date) AS year, -- Extract the year from the date
+        TO_CHAR(date, 'Day') AS day_of_week, -- Extract the name of the weekday from the date
+        DATE_PART('week', date) AS week_of_year, -- Extract the week number of the year from the date
+        TO_CHAR(date, 'YYYY-"W"IW') AS year_and_week -- Combine year and calendar week into format '2024-W43'
     FROM forecast_day_data
 )
 SELECT *
