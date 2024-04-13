@@ -1,4 +1,3 @@
--- Create astro table, adding a column calculating the daytime. 
 WITH astro_forecast_day AS(
 		SELECT 
 				date,
