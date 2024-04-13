@@ -13,4 +13,3 @@ WITH astro_forecast_day AS(
 				CAST(sunset AS time) - CAST(sunrise AS time) AS daytime
 		FROM staging_forecast_day)
 SELECT * FROM astro_forecast_day
-
