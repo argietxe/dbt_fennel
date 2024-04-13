@@ -1,6 +1,3 @@
-SELECT * FROM staging_forecast_day sfd ;
-
-
 -- Create astro table, adding a column calculating the daytime. 
 WITH astro_forecast_day AS(
 		SELECT 
