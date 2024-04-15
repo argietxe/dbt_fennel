@@ -12,7 +12,7 @@ add_features AS (
         TO_CHAR(date, 'YYYY-"W"IW') AS year_and_week -- Combine year and calendar week into format '2024-W43'
     FROM forecast_day_data
 ),
-WITH hemispheres AS (
+hemispheres AS (
     SELECT *,
     CASE WHEN city IN ('Berlin','Biarritz','Reykjavik','Vancouver') THEN 1 ELSE 0 END AS hemisphere    -- Splitting the locations by hemispheres
     FROM add_features
