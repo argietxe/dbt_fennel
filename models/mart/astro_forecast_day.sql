@@ -29,6 +29,6 @@ astro_forecast_day AS(
         moonset,
         moon_phase,
         moon_illumination,
-    		(daytime::time + INTERVAL '24 hour') as daytime
+    		(daytime::time + INTERVAL '24 hour') as sunlight
 		FROM daytime_forecast_day)
-SELECT * FROM astro_forecast_day
+SELECT * FROM astro_forecast_day;
