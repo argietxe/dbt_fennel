@@ -1,9 +1,9 @@
 SELECT city
 		,season_name		
 		,round(avg(avg_humidity),2) as avg_humidity
-		,sum(daily_will_it_rain) as rainy_days
+		,sum(daily_will_it_rain) as total_rainy_days
 		,sum(total_precip_mm) as total_precip_mm
-		,sum(daily_will_it_snow) as snowy_days
+		,sum(daily_will_it_snow) as total_snowy_days
 		,sum(total_snow_cm) as total_snow_cm
 FROM prep_forecast_day
 GROUP BY city, season_name
