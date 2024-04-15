@@ -45,29 +45,4 @@ SELECT city, season_name,
 						THEN 1 ELSE 0 END) AS stormy_days
 	FROM prep_forecast_day
 GROUP BY city, season_name
-ORDER BY season_name ASC;
-
-
-
-
-
-
-
-
-
--- HOW TO DEAL WITH CONDICTION ICON URL
-
--- in jupyter notebook cell
-
-/* "!" is to translate as markdown
- * ![wheater-icon](//cdn.weatherapi.com/weather/64x64/day/305.png?width=35) adding '?width=35' at the end
- */
-
-
-
--- to convert readble by softwares, making sure the cell is at this format above-- 
--- as markdown --
-
-SELECT *,
-		CONCAT('![wheater-icon](',condition_icon,'?width=35)') AS condition_icon_md
-FROM prep_forecast_day pfd;
+ORDER BY season_name ASC
