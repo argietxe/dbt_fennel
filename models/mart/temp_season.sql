@@ -1,6 +1,3 @@
-SELECT * FROM prep_forecast_day
-
-
 SELECT city
 		,season_name		
 		,min(min_temp_c) as min_temp_c
@@ -8,8 +5,7 @@ SELECT city
 		,round(avg(avg_temp_c),2) as avg_temp_c
 FROM prep_forecast_day
 GROUP BY city, season_name 
-ORDER BY season_name ASC;
-
+ORDER BY season_name ASC
 
 
 

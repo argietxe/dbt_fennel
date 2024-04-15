@@ -1,6 +1,3 @@
-SELECT * FROM prep_forecast_day
-
-
 SELECT city
 		,season_name		
 		,round(avg(avg_humidity),2) as avg_humidity
@@ -10,7 +7,7 @@ SELECT city
 		,sum(total_snow_cm) as total_snow_cm
 FROM prep_forecast_day
 GROUP BY city, season_name
-ORDER BY season_name ASC;
+ORDER BY season_name ASC
 
 
 
