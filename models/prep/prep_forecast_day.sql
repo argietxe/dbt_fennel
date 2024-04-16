@@ -33,10 +33,3 @@ seasons AS (
 )
 SELECT * FROM seasons
 
-
-day_of_month
-month_of_year
-year
-day_of_week
-week_of_year
-year_and_week

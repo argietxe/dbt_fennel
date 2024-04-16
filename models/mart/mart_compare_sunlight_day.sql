@@ -3,7 +3,7 @@ SELECT
 	,MIN(sunlight) as shortest_day
 	,MAX(sunlight) AS longest_day
 	,AVG(sunlight) AS avg_daytime
-FROM astro_forecast_day
+FROM mart_astro_forecast_day
 GROUP BY city
 ORDER BY shortest_day
 

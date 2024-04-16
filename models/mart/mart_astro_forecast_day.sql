@@ -17,7 +17,7 @@ WITH daytime_forecast_day AS (
         END AS daytime
     FROM staging_forecast_day
 ),
-astro_forecast_day AS(
+mart_astro_forecast_day AS(
 		SELECT
 		date,
 		city,
@@ -31,4 +31,4 @@ astro_forecast_day AS(
         moon_illumination,
     		(daytime::time + INTERVAL '24 hour') as sunlight
 		FROM daytime_forecast_day)
-SELECT * FROM astro_forecast_day
+SELECT * FROM mart_astro_forecast_day
